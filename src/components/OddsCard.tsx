@@ -7,6 +7,19 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { Grid } from '@mui/material';
 
+function convertToLocalTime(gameDate: Date): string{
+    let utcDateString = gameDate.toString()+"Z";
+    let utcDate = new Date(utcDateString);
+    let timeZone = utcDate.toLocaleDateString('en-US', {
+        day: '2-digit',
+        timeZoneName: 'short',
+      }).slice(4);
+    let date = utcDate.toLocaleDateString("en-US")
+    let time = utcDate.toLocaleTimeString();
+    console.log(timeZone);
+
+    return date + " " + time + " " + timeZone;
+}
 function convertDecimalToPercentString(decimal: number): string{
     return (decimal*100).toFixed(2) + "%";
 }
@@ -47,47 +60,7 @@ const Tutorial: React.FC = () => {
        return (
         <Grid container key={id} className="matchup-row">        
        <Grid item xs={2}></Grid>
-        <Grid item xs={3}>
-            <Card className="team-card">
-            <CardActionArea>
-            <img className="image"
-            src={homeTeam.logoUri}
-            alt={homeTeam.locationName}
-            />
-            <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-                {homeTeam.teamName}
-            </Typography>
-            <Typography component={'span'} variant="body2" color="text.secondary">
-                <h5>Model Odds</h5>
-                Percent: {convertDecimalToPercentString(modelHomeOdds)}
-                <br></br>
-                American: {convertDecimalToAmericanString(modelHomeOdds)}
-                <br></br>
-                <h5>Vegas Odds</h5>
-                Percent: {convertDecimalToPercentString(vegasHomeOdds)}
-                <br></br>
-                American: {convertDecimalToAmericanString(vegasHomeOdds)}
-            </Typography>
-            </CardContent>
-            </CardActionArea>
-            </Card>
-        </Grid>
-        <Grid item xs={2}>
-            <Card className="team-date">
-            <CardActionArea>
-            <CardContent>
-            <Typography gutterBottom variant="h5" component="div" align="center">
-                @
-            </Typography>
-            <Typography variant="body2" color="text.secondary" align="center">
-                {gameDate.toString()}
-            </Typography>
-            </CardContent>
-            </CardActionArea>
-            </Card>
-        </Grid>
-        <Grid item xs={3}>
+       <Grid item xs={3}>
             <Card className="team-card">
             <CardActionArea>
             <img className="image"
@@ -108,6 +81,46 @@ const Tutorial: React.FC = () => {
                 Percent: {convertDecimalToPercentString(vegasAwayOdds)}
                 <br></br>
                 American: {convertDecimalToAmericanString(vegasAwayOdds)}
+            </Typography>
+            </CardContent>
+            </CardActionArea>
+            </Card>
+        </Grid>
+        <Grid item xs={2}>
+            <Card className="team-date">
+            <CardActionArea>
+            <CardContent>
+            <Typography gutterBottom variant="h5" component="div" align="center">
+                @
+            </Typography>
+            <Typography variant="body2" color="text.secondary" align="center">
+                {convertToLocalTime(gameDate)}
+            </Typography>
+            </CardContent>
+            </CardActionArea>
+            </Card>
+        </Grid>
+        <Grid item xs={3}>
+            <Card className="team-card">
+            <CardActionArea>
+            <img className="image"
+            src={homeTeam.logoUri}
+            alt={homeTeam.locationName}
+            />
+            <CardContent className="team-card">
+            <Typography gutterBottom variant="h5" component="div">
+                {homeTeam.teamName}
+            </Typography>
+            <Typography component={'span'} variant="body2" color="text.secondary">
+                <h5>Model Odds</h5>
+                Percent: {convertDecimalToPercentString(modelHomeOdds)}
+                <br></br>
+                American: {convertDecimalToAmericanString(modelHomeOdds)}
+                <br></br>
+                <h5>Vegas Odds</h5>
+                Percent: {convertDecimalToPercentString(vegasHomeOdds)}
+                <br></br>
+                American: {convertDecimalToAmericanString(vegasHomeOdds)}
             </Typography>
             </CardContent>
             </CardActionArea>
