@@ -1,21 +1,15 @@
-export default interface IGameOdds {
+export interface ITeam{
+  id: number,
+  locationName: string,
+  teamName: string,
+  logoUri: string,
+  vegasOdds: number,
+  modelOdds: number
+}
+
+export interface IGameOdds {
     id: number,
     gameDate: Date,
-    vegasHomeOdds: number,
-    vegasAwayOdds: number,
-    modelHomeOdds: number,
-    modelAwayOdds: number,
-    homeTeam: {
-      id: number,
-      locationName: string,
-      teamName: string,
-      logoUri: string
-    }
-    awayTeam: {
-      id: number,
-      locationName: string,
-      teamName: string,
-      logoUri: string
-    }
+    homeTeam: ITeam
+    awayTeam: ITeam
   }
-  
