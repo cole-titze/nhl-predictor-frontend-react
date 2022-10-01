@@ -1,16 +1,14 @@
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
-import { convertToLocalTime } from '../helpers/utils'
+import { convertToLocalTime } from '../helpers/timeUtils'
 interface IProps{
     gameDate: Date
 }
 function AtCard(props: IProps): JSX.Element {
 
     return (
-        <Card className="team-date">
-        <CardActionArea>
+        <Card className="team-at">
         <CardContent>
         <Typography gutterBottom variant="h5" component="div" align="center">
             @
@@ -19,7 +17,6 @@ function AtCard(props: IProps): JSX.Element {
             {convertToLocalTime(props.gameDate)}
         </Typography>
         </CardContent>
-        </CardActionArea>
         </Card>
     )};
 export default AtCard;

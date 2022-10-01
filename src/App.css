@@ -45,15 +45,33 @@
 .team-card{
   height: 100%;
 }
-.team-date{
-  margin-top: 45%;
+.team-score{
+  margin: 0 5% 15% 5%;
+}
+.team-at{
+  margin: 0 5% 15% 5%;
 }
 .image {
-  margin-right: 20%;
-  margin-left: 20%;
-  width: 60%;
-  height: 150px;
+  max-width:200px;
+  max-height:100px;
+  margin: auto;
 }
-.input-spacing {
-  margin: 0 10px 0 10px
+.header {
+  background-color: #333;
+  top: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 5%;
+  position: fixed;
+  padding: 1%;
+  z-index: 9999;
+}
+.main {
+  padding-top: 2%;
+}
+.app {
+  background-color: #f9f9ff;
+}
+html {
+  background-color: #f9f9ff;
 }
