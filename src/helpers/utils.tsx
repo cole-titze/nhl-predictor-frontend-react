@@ -7,7 +7,6 @@ export function convertToLocalTime(gameDate: Date): string{
       }).slice(4);
     let date = utcDate.toLocaleDateString("en-US")
     let time = utcDate.toLocaleTimeString();
-    console.log(timeZone);
 
     return date + " " + time + " " + timeZone;
 }
