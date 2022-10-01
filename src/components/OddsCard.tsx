@@ -4,14 +4,7 @@ import { IGameOdds } from "../types/GameOdds";
 import { IDateRange } from "../types/DateRange";
 import Matchups from "./Matchups";
 import DateRangePicker from "./DateRangePicker";
-
-const DAYS_AHEAD = 7;
-function getDefaultDateRange(): IDateRange {
-  const defaultStartDate = new Date();
-  let defaultEndDate = new Date();
-  defaultEndDate = new Date(defaultEndDate.setDate(defaultEndDate.getDate() + DAYS_AHEAD));
-  return { startDate: defaultStartDate, endDate: defaultEndDate};
-}
+import { getDefaultDateRange } from "../helpers/dateUtils";
 
 const Tutorial: React.FC = () => {
   const [matchupList, setMatchups] = useState<Array<IGameOdds>>([]);
@@ -37,7 +30,7 @@ const Tutorial: React.FC = () => {
   return ( 
   <div>
     <h1>Matchups</h1>
-    <DateRangePicker dateRange={dateRange} onClick={updateGameOdds}/>
+    <DateRangePicker dateRange={dateRange} onChange={updateGameOdds}/>
     <Matchups matchups={matchupList}/>
   </div>
 );

@@ -21,7 +21,7 @@ export default function BasicDatePicker(props: IProps) {
   return (
     <span className="input-spacing">
       <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <DatePicker className="input-spacing" 
+        <DatePicker className="input-spacing"
           label={props.label}
           value={date}
           onChange={(newDate) => {setDate(newDate);}}

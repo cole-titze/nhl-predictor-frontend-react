@@ -1,11 +1,11 @@
 import { IDateRange } from "../types/DateRange";
 import BasicDatePicker from "./BasicDatePicker";
-import Button from '@mui/material/Button';
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Divider, Stack } from "@mui/material";
 
 interface IProps{
     dateRange: IDateRange,
-    onClick: (dateRange: IDateRange) => void
+    onChange: (dateRange: IDateRange) => void
 }
 function DateRangePicker(props: IProps): JSX.Element {
     const [dateRange, setDateRange] = useState<IDateRange>(props.dateRange);
@@ -17,13 +17,18 @@ function DateRangePicker(props: IProps): JSX.Element {
         const newDateRange = {startDate: dateRange.startDate, endDate: newEndDate}
         setDateRange(newDateRange);
     }
-
+    useEffect( () => {
+        props.onChange(dateRange);
+      }, [dateRange]);
     return (
-        <div>
-            <BasicDatePicker label="Start Date" defaultDate={dateRange.startDate} onChange={(newStartDate) => setStartDate(newStartDate)}/>
-            <span>to</span>
-            <BasicDatePicker label="End Date" defaultDate={dateRange.endDate} onChange={(newEndDate) => setEndDate(newEndDate)}/>
-            <Button variant="contained" onClick={e => props.onClick(dateRange)}>Update</Button>
-        </div>
+        <span>
+            <Stack justifyContent="center" direction="row" spacing={{ xs:1, s: 2 }}>
+                <BasicDatePicker label="Start Date" defaultDate={dateRange.startDate} onChange={(newStartDate) => setStartDate(newStartDate)}/>
+                <span>to</span>
+                <BasicDatePicker label="End Date" defaultDate={dateRange.endDate} onChange={(newEndDate) => setEndDate(newEndDate)}/>
+            </Stack>
+            <br></br>
+            <Divider variant="middle"></Divider>
+        </span>
     )};
 export default DateRangePicker;

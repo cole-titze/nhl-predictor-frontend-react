@@ -6,8 +6,8 @@ import OddsCard from "./components/OddsCard";
 
 function App() {
   return (
-    <div>
-      <nav className="navbar navbar-expand navbar-dark bg-dark">
+    <div className="app">
+      <nav className="navbar navbar-expand navbar-dark bg-dark header">
         <a href="/odds" className="navbar-brand">
           Nhl Odds
         </a>
@@ -19,7 +19,7 @@ function App() {
           </li>
         </div>
       </nav>
-      <div className="container mt-3">
+      <div className="container mt-3 main">
         <Routes>
           <Route path="/" element={<OddsCard/>} />
           <Route path="/odds" element={<OddsCard/>} />
