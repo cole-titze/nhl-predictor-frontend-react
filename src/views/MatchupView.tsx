@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import ApiService from "../services/ApiService";
 import { IGameOdds } from "../types/GameOdds";
 import { IDateRange } from "../types/DateRange";
-import Matchups from "./Matchups";
-import DateRangePicker from "./DateRangePicker";
+import Matchups from "../components/matchups/Matchups";
+import DateRangePicker from "../components/matchups/DateRangePicker";
 import { getDefaultDateRange } from "../helpers/dateUtils";
 
-const Tutorial: React.FC = () => {
+const MatchupView: React.FC = () => {
   const [matchupList, setMatchups] = useState<Array<IGameOdds>>([]);
   const [dateRange, setDateRange] = useState<IDateRange>(getDefaultDateRange());
 
@@ -35,4 +35,4 @@ const Tutorial: React.FC = () => {
   </div>
 );
 };
-export default Tutorial;
+export default MatchupView;

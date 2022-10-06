@@ -3,7 +3,7 @@ export enum TEAM {
   away = 1
 }
 
-export interface ITeam{
+export interface IMatchupTeam{
   id: number,
   locationName: string,
   teamName: string,
@@ -15,10 +15,19 @@ export interface ITeam{
 }
 
 export interface IGameOdds {
-    id: number,
-    gameDate: Date,
-    homeTeam: ITeam,
-    awayTeam: ITeam,
-    winner: TEAM,
-    hasBeenPlayed: boolean
-  }
+  id: number,
+  gameDate: Date,
+  homeTeam: IMatchupTeam,
+  awayTeam: IMatchupTeam,
+  winner: TEAM,
+  hasBeenPlayed: boolean
+}
+
+export interface ITeam {
+  id: number,
+  locationName: string,
+  teamName: string,
+  logoUri: string,
+  vegasLogLoss: number,
+  modelLogLoss: number
+}

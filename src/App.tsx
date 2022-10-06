@@ -2,7 +2,8 @@ import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import OddsCard from "./components/OddsCard";
+import MatchupView from "./views/MatchupView";
+import TeamListView from "./views/TeamListView"
 
 function App() {
   return (
@@ -17,12 +18,18 @@ function App() {
               Matchups
             </Link>
           </li>
+          <li>
+            <Link to={"/teams"} className="nav-link">
+              Teams
+            </Link>
+          </li>
         </div>
       </nav>
       <div className="container mt-3 main">
         <Routes>
-          <Route path="/" element={<OddsCard/>} />
-          <Route path="/odds" element={<OddsCard/>} />
+          <Route path="/" element={<MatchupView/>} />
+          <Route path="/odds" element={<MatchupView/>} />
+          <Route path="/teams" element={<TeamListView/>} />
         </Routes>
       </div>
     </div>
