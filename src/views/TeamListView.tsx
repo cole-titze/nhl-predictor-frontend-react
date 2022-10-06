@@ -13,7 +13,6 @@ const TeamListView: React.FC = () => {
   const [teamList, setTeams] = useState<Array<ITeam>>([]);
 
   const getTeams = (year: number) => {
-    console.log(year);
       ApiService.getAllTeams(year)
       .then((response: any) => {
         setTeams(response.data.value);
