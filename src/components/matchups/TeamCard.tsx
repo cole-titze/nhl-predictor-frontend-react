@@ -3,18 +3,16 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip';
 import { CardActionArea } from '@mui/material';
-import { ITeam, TEAM } from '../types/GameOdds'
-import {convertDecimalToPercentString, convertDecimalToAmericanString} from "../helpers/timeUtils"
+import { IMatchupTeam, TEAM } from '../../types/GameOdds'
+import {convertDecimalToPercentString, convertDecimalToAmericanString} from "../../helpers/timeUtils"
 import Stack from '@mui/material/Stack';
 
 interface IProps{
-    team: ITeam,
+    team: IMatchupTeam,
     hasBeenPlayed: boolean,
     winner: TEAM
 }
 function getTag(hasBeenPlayed: boolean, winner: TEAM, team: TEAM){
-    console.log(winner);
-    console.log(team);
     if(!hasBeenPlayed)
         return;
     if(winner===team)

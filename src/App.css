@@ -75,3 +75,12 @@
 html {
   background-color: #f9f9ff;
 }
+.team-image {
+  max-width:50px;
+  max-height:20px;
+}
+.team-list-card {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin: 'auto';
+}

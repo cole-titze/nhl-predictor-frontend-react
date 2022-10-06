@@ -1,4 +1,4 @@
-import { IDateRange } from "../types/DateRange";
+import { IDateRange } from "../../types/DateRange";
 import BasicDatePicker from "./BasicDatePicker";
 import { useEffect, useState } from "react";
 import { Divider, Stack } from "@mui/material";
