@@ -76,11 +76,18 @@ html {
   background-color: #f9f9ff;
 }
 .team-image {
-  max-width:50px;
-  max-height:20px;
+  padding: 0;
+  margin: 0;
+  max-width:40px;
+  max-height:25px;
 }
 .team-list-card {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 17px;
+  margin-bottom: 17px;
   margin: 'auto';
+}
+.center-content{
+  padding: 0;
+  margin: 0;
+  text-align: center;
 }
