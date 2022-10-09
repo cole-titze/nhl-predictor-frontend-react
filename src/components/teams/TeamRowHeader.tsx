@@ -18,7 +18,7 @@ function TeamRowHeader(): JSX.Element {
             <Typography className="center-content" sx={{width: 150}} variant="body1" component="div">
                 Vegas Log Loss
             </Typography>
-            <Typography className="center-content" sx={{width: 100}} variant="body1" component="div">
+            <Typography className="center-content" sx={{width: 150}} variant="body1" component="div">
                 Difference
             </Typography>
         </Stack>
