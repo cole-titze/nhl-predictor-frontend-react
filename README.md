@@ -1,3 +1,5 @@
+# Moved to [nhl-odds-web-frontend](https://github.com/cole-titze/nhl-odds-web-frontend)
++ Restructuring packages and planning on eventually removing mui dependency
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
